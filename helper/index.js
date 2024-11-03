@@ -20,3 +20,10 @@ export async function getData(url) {
     return err;
   }
 }
+
+export function getFromUrl(nameOfParam) {
+  const urlParams = new URLSearchParams(window.location.search);
+  // console.log(window.location.search);
+  // console.log(document.URL);
+  return urlParams.get(nameOfParam);
+}

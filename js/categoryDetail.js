@@ -1,4 +1,4 @@
-import { getComponents, getData } from "../helper/index.js";
+import { getComponents, getData, getFromUrl } from "../helper/index.js";
 
 const navContainer = document.getElementById("nav-container");
 const footerContainer = document.getElementById("footer-container");
@@ -13,17 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-function getFromUrl() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get("category");
-}
-
 async function showData() {
   const data = await getData(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${getFromUrl()}`
+    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${getFromUrl(
+      "category"
+    )}`
   );
-
-  console.log(data.meals);
 
   if (data) {
     const meals = data.meals;
@@ -34,9 +29,9 @@ async function showData() {
         <div class="card p-4" style="width: 100%">
           <img src="${meal.strMealThumb}" class="card-img-top img-fluid" alt="meal-${meal.idMeal}" />
           <div class="card-body">
-            <h5 class="card-title">${meal.strMeal}</h5>
+            <h5 class="card-title poppins-bold">${meal.strMeal}</h5>
           </div>
-          <a class="btn btn-primary" href="#">Read More</a>
+          <a class="btn btn-primary" href="/food-detail/food-detail.html?foodId=${meal.idMeal}">Read More</a>
         </div>
       `;
       listFoodsContainer.appendChild(divCol);
