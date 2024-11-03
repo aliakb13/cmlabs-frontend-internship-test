@@ -1,18 +1,26 @@
 // let data;
 const containerMeals = document.getElementById("meals-data");
+const navContainer = document.getElementById("nav-container");
+const footerContainer = document.getElementById("footer-container");
+import { getComponents, getData } from "../helper/index.js";
 
-async function getData() {
-  const meals = await axios.get(
-    "https://www.themealdb.com/api/json/v1/1/categories.php"
-  );
-  return meals.data.categories;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    getComponents("navbar.html", navContainer);
+    getComponents("footer.html", footerContainer);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 async function showData() {
-  const data = await getData();
+  const data = await getData(
+    "https://www.themealdb.com/api/json/v1/1/categories.php"
+  );
 
   if (data) {
-    data.forEach((obj) => {
+    const categories = data.categories;
+    categories.forEach((obj) => {
       const divCol = document.createElement("div");
       divCol.classList.add("col");
       divCol.innerHTML = `
@@ -46,9 +54,9 @@ async function showData() {
                 class="accordion-collapse collapse"
                 data-bs-parent="#accordionExample"
               >
-                <div class="accordion-body d-xl-flex flex-xl-column">
+                <div class="accordion-body d-xl-flex flex-xl-column text-justify">
                  ${obj.strCategoryDescription}
-                 <a class="btn btn-primary mt-3" href="food-detail.html">
+                 <a class="btn btn-primary mt-3" href="/category-detail/category-detail.html?category=${obj.strCategory}">
                     Find More
                  </a>
                 </div>

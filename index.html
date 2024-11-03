@@ -37,84 +37,11 @@
 
     <!-- external css -->
     <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
   </head>
   <body>
     <div class="container-fluid" style="background-color: #ffa726">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <i
-            class="fa-solid fa-pizza-slice navbar-brand fs-3"
-            style="color: #3e2723"
-          ></i>
-          <a class="navbar-brand roboto-bold" href="#" style="color: #3e2723"
-            >SENO MEALS</a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fa-solid fa-bars" style="color: #fff8e1"></i>
-          </button>
-          <div
-            class="collapse navbar-collapse fs-5"
-            id="navbarSupportedContent"
-          >
-            <ul
-              class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto d-xl-flex gap-xl-5"
-            >
-              <li class="nav-item">
-                <a
-                  href="#"
-                  style="color: #3e2723; text-decoration: none"
-                  class="roboto-bold"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  href="#"
-                  style="color: #3e2723; text-decoration: none"
-                  class="roboto-bold"
-                  >Foods</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  href="#"
-                  style="color: #3e2723; text-decoration: none"
-                  class="roboto-bold"
-                  >About</a
-                >
-              </li>
-            </ul>
-            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-              <li class="nav-item">
-                <i
-                  class="fa-brands fa-facebook nav-link"
-                  style="color: #3e2723"
-                ></i>
-              </li>
-              <li class="nav-item">
-                <i
-                  class="fa-brands fa-square-x-twitter nav-link"
-                  style="color: #3e2723"
-                ></i>
-              </li>
-              <li class="nav-item">
-                <i
-                  class="fa-brands fa-instagram nav-link"
-                  style="color: #3e2723"
-                ></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <nav id="nav-container"></nav>
       <section class="container mt-5 p-3">
         <div class="row">
           <div class="col-xl-5 col-sm-12 p-4">
@@ -217,15 +144,15 @@
         </div>
       </section>
     </div>
-    <section id="category" class="container mt-5">
+    <main id="category" class="container mt-5">
       <h2 class="text-center">Category</h2>
       <div class="row row-cols-xl-4 row-cols-sm-12 mt-5" id="meals-data">
         <!-- Buat tampil data -->
       </div>
-    </section>
-    <section>about</section>
-    <footer>Ini footer</footer>
+    </main>
 
-    <script src="./js/main.js"></script>
+    <footer id="footer-container"></footer>
+
+    <script src="./js/main.js" type="module"></script>
   </body>
 </html>
