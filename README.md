@@ -31,8 +31,6 @@ This is the perfect web-based application for you. You can try dishes from diffe
 
 ## How to run 🔨
 
-Install my-project with npm
-
 ### 1. Clone the repository:
 
 ```bash
@@ -52,7 +50,12 @@ install your favorite live server on your favorite code editor
 ### 4. Open with live server
 
 Note that the entry point for this project is index.html. Always make sure that you run that file first!
+OR
+
+### 5. You can just click link on demo
+
+You can opened up the website [here](https://cmlabs-frontend-internship-test-one.vercel.app/) 😄
 
 ## Demo 🎞️
 
-You can open this website by clicking the following link \*updated Later
+You can open this website by clicking the following link https://cmlabs-frontend-internship-test-one.vercel.app/
